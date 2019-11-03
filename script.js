@@ -8,12 +8,12 @@ const button32x32 = document.getElementById("button32x32");
 const buttonImage = document.getElementById("buttonImage");
 
 button4x4.addEventListener("click", () => {
-  path = "data/4x4.json";
+  path = "https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/tasks/stage-2/codejam-canvas/data/4x4.json";
   updateJSONCanvas(path);
 });
 
 button32x32.addEventListener("click", () => {
-  path = "data/32x32.json";
+  path = "https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/tasks/stage-2/codejam-canvas/data/32x32.json";
   updateJSONCanvas(path);
 });
 
