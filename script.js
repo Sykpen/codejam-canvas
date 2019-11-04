@@ -6,21 +6,41 @@ let path;
 const button4x4 = document.getElementById("button4x4");
 const button32x32 = document.getElementById("button32x32");
 const buttonImage = document.getElementById("buttonImage");
+const control_menu = document.querySelector(".control_menu");
 
-button4x4.addEventListener("click", () => {
-  path = "https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/tasks/stage-2/codejam-canvas/data/4x4.json";
-  updateJSONCanvas(path);
-});
+// Обновленный вариант
+control_menu.onclick = function(event){
+	let target = event.target.closest('div');
+	if(target == button4x4){
+		path = "https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/tasks/stage-2/codejam-canvas/data/4x4.json";
+  		updateJSONCanvas(path);
+	}
+	if(target == button32x32){
+		path = "https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/tasks/stage-2/codejam-canvas/data/32x32.json";
+  		updateJSONCanvas(path);
+	}
+	if(target ==buttonImage){
+	    path = "data/image.png";
+  		updateImageCanvas(path);	
+	}
+}
 
-button32x32.addEventListener("click", () => {
-  path = "https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/tasks/stage-2/codejam-canvas/data/32x32.json";
-  updateJSONCanvas(path);
-});
+// Старый вариант
 
-buttonImage.addEventListener("click", () => {
-  path = "data/image.png";
-  updateImageCanvas(path);
-});
+// button4x4.addEventListener("click", () => {
+//   path = "https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/tasks/stage-2/codejam-canvas/data/4x4.json";
+//   updateJSONCanvas(path); 
+// });
+
+// button32x32.addEventListener("click", () => {
+//   path = "https://raw.githubusercontent.com/rolling-scopes-school/tasks/master/tasks/stage-2/codejam-canvas/data/32x32.json";
+//   updateJSONCanvas(path);
+// });
+
+// buttonImage.addEventListener("click", () => {
+//   path = "data/image.png";
+//   updateImageCanvas(path);
+// });
 
 function updateImageCanvas(path) {
   canvas.width = 512;
